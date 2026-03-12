@@ -19,6 +19,9 @@ namespace CoreMVC_Forms2.Models
 
         public int Price { get; set; }
 
+        [Display(Name = "Описание")]
+        public string Description { get; set; }
+
         public Boolean hasAudioBook { get; set; }
     }
 }
