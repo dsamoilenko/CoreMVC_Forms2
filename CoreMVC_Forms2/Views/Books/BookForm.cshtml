@@ -1,0 +1,49 @@
+﻿@model CoreMVC_Forms2.ViewModels.BookFormViewModel
+
+@{
+    ViewBag.Title = "Book";
+}
+
+<h2>@Model.Book.Title</h2>
+
+<h2>@ViewBag.Test</h2>
+<h2>@ViewData["MyMessage"]</h2>
+
+@using (Html.BeginForm("Save", "Books"))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Book.Title)
+        @Html.TextBoxFor(m => m.Book.Title, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Book.Author)
+        @Html.TextBoxFor(m => m.Book.Author, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Genres)
+        @Html.DropDownListFor(m => m.Book.Genre, new SelectList(Model.Genres, "Name", "Name"), "Select genre", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Book.PubDate)
+        @Html.TextBoxFor(m => m.Book.PubDate, "{0:d MMM yyyy}", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(m => m.Book.Price)
+        @Html.TextBoxFor(m => m.Book.Price, new { @class = "form-control" })
+    </div>
+
+    <div class="checkbox">
+        <label>
+            @Html.CheckBoxFor(m => m.Book.hasAudioBook) Is audio book provided?
+        </label>
+    </div>
+
+    @Html.HiddenFor(m => m.Book.Id)
+
+    <button class="btn btn-primary">Save</button>
+    <input class="btn" type="button" value="Cancel" onclick="@("window.location.href='" + @Url.Action("Index", "Books") + "'");" />
+}
