@@ -6,13 +6,16 @@
 
         public string Address { get; set; }
 
-        public int Agw { get; set; }
+        public int Age { get; set; }
 
         public int Weight { get; set; }
 
-        public Person()
+        public Person(string name, string address, int age, int weight)
         {
-                
+            Name = name;
+            Address = address;
+            Age = age;
+            Weight = weight;
         }
 
         public override string ToString()
