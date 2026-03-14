@@ -8,16 +8,23 @@
 
         public int Agw { get; set; }
 
-        public int Weight { get; set; }
+        public decimal Weight { get; set; }
 
-        public Person()
+        public decimal Height { get; set; }
+
+        public Person(string name)
         {
-                
+            Name = name;
         }
 
         public override string ToString()
         {
-            return Name;
+            return $"Person: Name: {Name}, Address: {Address}";
+        }
+
+        public void Print()
+        {
+
         }
     }
 }
