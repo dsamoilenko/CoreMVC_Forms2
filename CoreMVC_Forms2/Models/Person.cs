@@ -8,7 +8,9 @@
 
         public int Age { get; set; }
 
-        public int Weight { get; set; }
+        public decimal Weight { get; set; }
+
+        public decimal Height { get; set; }
 
         public Person(string name, string address, int age, int weight)
         {
@@ -20,7 +22,12 @@
 
         public override string ToString()
         {
-            return Name;
+            return $"Person: Name: {Name}, Address: {Address}";
+        }
+
+        public void Print()
+        {
+
         }
     }
 }
