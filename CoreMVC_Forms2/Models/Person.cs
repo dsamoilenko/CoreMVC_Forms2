@@ -9,9 +9,8 @@
         public decimal Age { get; set; }
 
         public decimal Weight { get; }
-
+        public decimal Salary { get; set; }
         public decimal Height { get; }
-
         public string LastName { get; set; }
 
         public Person(string name, string lastName, string address, int age, int weight)
