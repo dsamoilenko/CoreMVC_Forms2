@@ -8,13 +8,16 @@
 
         public int Agw { get; set; }
 
-        public decimal Weight { get; set; }
+        public int Weight { get; set; }
 
-        public decimal Height { get; set; }
+        public int Height { get; set; }
 
-        public Person(string name)
+        public decimal Salary { get; set; }
+
+        public Person(string name, string address)
         {
             Name = name;
+            Address = address;
         }
 
         public override string ToString()
